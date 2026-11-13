@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: stats_alfil
   m_EditorClassIdentifier: Assembly-CSharp::stats
   nom_pesa: alfil
+  iconoCarta: {fileID: 1676898138316344188, guid: 7714a53630d95ef40908029a332e46c5, type: 3}
   vida: 75
   atac: 75
   movimentsPermesos:

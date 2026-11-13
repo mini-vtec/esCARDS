@@ -692,9 +692,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7e6a3f0ecc7bcc4794c5229385b77c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Game
-  pesa_1: {fileID: 0}
-  pesa_2: {fileID: 0}
-  pesa_3: {fileID: 0}
+  pesa_1: {fileID: 168401796}
+  pesa_2: {fileID: 618716173}
+  pesa_3: {fileID: 401891668}
   black_pieces:
   - {fileID: 4284425878980211509, guid: af5300e5b74c39d4a9c23d8e9b47a3fc, type: 3}
   - {fileID: 4299893317500355673, guid: 9a8ee1b6d6609cb409fad591a7d06fb9, type: 3}
@@ -1748,10 +1748,7 @@ MonoBehaviour:
   carta_3: {fileID: 401891670}
   ronda: {fileID: 0}
   game: {fileID: 463050645}
-  cells: {fileID: 0}
-  cavall: {fileID: -190907066628505760, guid: 3c940c362b9689e45820cbb841448fd6, type: 3}
-  alfil: {fileID: 1676898138316344188, guid: 7714a53630d95ef40908029a332e46c5, type: 3}
-  carta_triada: 0
+  cells: {fileID: 463050646}
 --- !u!1 &1789339855
 GameObject:
   m_ObjectHideFlags: 0
@@ -1924,6 +1921,10 @@ PrefabInstance:
     - target: {fileID: 6076028763883620662, guid: c8fa2f95deb9c2e44909e7f28d936005, type: 3}
       propertyPath: m_Name
       value: chosepiece
+      objectReference: {fileID: 0}
+    - target: {fileID: 6076028763883620662, guid: c8fa2f95deb9c2e44909e7f28d936005, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

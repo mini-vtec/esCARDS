@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 709903338345072061}
   - component: {fileID: 6456584605356023136}
   - component: {fileID: 2425663038108108747}
-  - component: {fileID: -5835595786678632603}
+  - component: {fileID: 2601886293989880504}
   m_Layer: 0
   m_Name: black_king
   m_TagString: Untagged
@@ -115,7 +115,7 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &-5835595786678632603
+--- !u!114 &2601886293989880504
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -124,6 +124,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 4299893317500355673}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c83b18809dfad884faf753dd2d02c58d, type: 3}
+  m_Script: {fileID: 11500000, guid: 07484a65f138ffc428cb4cd09ac5d4e8, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Script_pesa
+  m_EditorClassIdentifier: Assembly-CSharp::Chessman
+  datosPesa: {fileID: 11400000, guid: 791689acd3cde0a4d88a7ddae857dee8, type: 2}
+  movePlate: {fileID: 0}

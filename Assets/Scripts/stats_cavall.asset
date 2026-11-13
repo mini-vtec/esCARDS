@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: stats_cavall
   m_EditorClassIdentifier: Assembly-CSharp::stats
   nom_pesa: cavall
+  iconoCarta: {fileID: -190907066628505760, guid: 3c940c362b9689e45820cbb841448fd6, type: 3}
   vida: 100
   atac: 50
   movimentsPermesos:

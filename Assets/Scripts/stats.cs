@@ -12,7 +12,9 @@ public struct Moviment
 public class stats : ScriptableObject
 {
     public string nom_pesa;
+    public Sprite iconoCarta;
     public int vida;
     public int atac;
     public List<Moviment> movimentsPermesos;
+
 }
