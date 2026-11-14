@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: stats_peo
   m_EditorClassIdentifier: Assembly-CSharp::stats
   nom_pesa: peo
+  iconoCarta: {fileID: 966276372665913127, guid: f89276168c4df534aaa3fc9972af0607, type: 3}
   vida: 25
   atac: 25
-  movimentsPermesos: []
+  movimentsPermesos:
+  - direccio: {x: 0, y: 1}
+    distanciaMaxima: 1
+  - direccio: {x: 1, y: 1}
+    distanciaMaxima: 1
+  - direccio: {x: -1, y: 1}
+    distanciaMaxima: 1

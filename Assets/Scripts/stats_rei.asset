@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: stats_rei
   m_EditorClassIdentifier: Assembly-CSharp::stats
   nom_pesa: rei
+  iconoCarta: {fileID: -8523310859973257616, guid: 3d90d5425f72ded49a731366320310b4, type: 3}
   vida: 300
   atac: 100
   movimentsPermesos:

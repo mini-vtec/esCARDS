@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: stats_reina
   m_EditorClassIdentifier: Assembly-CSharp::stats
   nom_pesa: reina
+  iconoCarta: {fileID: 3647733954411182026, guid: 6b52da5465011b143b35340c16e6757a, type: 3}
   vida: 200
   atac: 100
   movimentsPermesos:

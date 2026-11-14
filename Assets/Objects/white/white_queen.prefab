@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6267652395103545158}
   - component: {fileID: 3205616912495337688}
   - component: {fileID: 3437284733452412748}
+  - component: {fileID: 845722717033943479}
   m_Layer: 0
   m_Name: white_queen
   m_TagString: Untagged
@@ -128,4 +129,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Chessman
   datosPesa: {fileID: 11400000, guid: 6aac2ccfeac0ac3428c2dd3e060283a4, type: 2}
-  movePlate: {fileID: 0}
+  moveplate: {fileID: 0}
+  esJugador: 1
+--- !u!65 &845722717033943479
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4208823790094573446}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1.9999999, z: 1.0000001}
+  m_Center: {x: 0.00000005960464, y: 0, z: -0.00000008940696}

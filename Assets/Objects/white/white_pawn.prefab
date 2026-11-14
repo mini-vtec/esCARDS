@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1487860498275641588}
   - component: {fileID: 1128533288529585691}
   - component: {fileID: 4601311123518833831}
+  - component: {fileID: 3813966954928423070}
   m_Layer: 0
   m_Name: white_pawn
   m_TagString: Untagged
@@ -126,4 +127,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Chessman
   datosPesa: {fileID: 11400000, guid: 53733a405abc32d47b9513e37cf389f8, type: 2}
-  movePlate: {fileID: 0}
+  moveplate: {fileID: 0}
+  esJugador: 1
+--- !u!65 &3813966954928423070
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1730610762647797475}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
+  m_Center: {x: 0, y: 0, z: 0}

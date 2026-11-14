@@ -4,10 +4,7 @@ using System.Collections.Generic;
 public class Chessman : MonoBehaviour
 {
     public stats datosPesa;
-    public MovePlate moveplate;
-
-    [Header("Equipo")]
-    public bool esJugador = true; // Marcado (true) para tus piezas, desmarcado (false) para los enemigos
+    public bool esJugador = true;
 
     private Game controller;
     private cells tableroCells;
@@ -19,7 +16,6 @@ public class Chessman : MonoBehaviour
     {
         controller = FindFirstObjectByType<Game>();
         tableroCells = FindFirstObjectByType<cells>();
-        moveplate = FindFirstObjectByType<MovePlate>();
 
         esJugador = esDelJugador;
         SetCoords(startX, startY);
@@ -38,7 +34,6 @@ public class Chessman : MonoBehaviour
 
     private void OnMouseUp()
     {
-        // Mucho más limpio: solo comprueba si es tu pieza y si es tu turno
         if (controller != null && !controller.IsGameOver() && esJugador && controller.GetCurrentPlayer() == "white")
         {
             DestroyMovePlates();
@@ -48,10 +43,10 @@ public class Chessman : MonoBehaviour
 
     public void DestroyMovePlates()
     {
-        GameObject[] movePlates = GameObject.FindGameObjectsWithTag("MovePlate");
+        MovePlate[] movePlates = FindObjectsByType<MovePlate>(FindObjectsSortMode.None);
         for (int i = 0; i < movePlates.Length; i++)
         {
-            Destroy(movePlates[i]);
+            Destroy(movePlates[i].gameObject);
         }
     }
 
@@ -84,10 +79,14 @@ public class Chessman : MonoBehaviour
     public void MovePlateSpawn(int matrixX, int matrixY)
     {
         Vector3 pos = tableroCells.ObtenirCentreCasella(matrixX, matrixY);
+        pos.y += 0.1f;
 
-        // Como moveplate ya es de tipo MovePlate, Instantiate nos devuelve el script directamente
-        MovePlate mpScript = Instantiate(moveplate, pos, Quaternion.identity);
+        GameObject mp = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
+        mp.transform.position = pos;
+        mp.transform.localScale = new Vector3(2.5f, 0.05f, 2.5f);
+        mp.GetComponent<MeshRenderer>().material.color = Color.gray;
 
+        MovePlate mpScript = mp.AddComponent<MovePlate>();
         mpScript.SetReference(gameObject);
         mpScript.SetCoords(matrixX, matrixY);
     }

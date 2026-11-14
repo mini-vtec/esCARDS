@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2488036615583237168}
   - component: {fileID: 7399089763674948962}
   - component: {fileID: -182494763939366919}
+  - component: {fileID: -539893538891390302}
   m_Layer: 0
   m_Name: white_bishop
   m_TagString: Untagged
@@ -127,4 +128,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Chessman
   datosPesa: {fileID: 11400000, guid: 615a77b64aff0f246ba16ff748e5a60b, type: 2}
-  movePlate: {fileID: 0}
+  moveplate: {fileID: 0}
+  esJugador: 1
+--- !u!65 &-539893538891390302
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4367471375365803181}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.99999994, y: 0.99999994, z: 6.123233e-17}
+  m_Center: {x: 0, y: 0, z: 0}
