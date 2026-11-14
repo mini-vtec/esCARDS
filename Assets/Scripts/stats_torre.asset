@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: stats_torre
   m_EditorClassIdentifier: Assembly-CSharp::stats
   nom_pesa: torre
+  iconoCarta: {fileID: -8626111162313799927, guid: 1a6e35b3ded40e840b520acce6b35356, type: 3}
   vida: 150
   atac: 25
   movimentsPermesos:

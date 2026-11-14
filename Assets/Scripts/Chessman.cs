@@ -4,21 +4,24 @@ using System.Collections.Generic;
 public class Chessman : MonoBehaviour
 {
     public stats datosPesa;
-    public GameObject movePlate;
+    public MovePlate moveplate;
+
+    [Header("Equipo")]
+    public bool esJugador = true; // Marcado (true) para tus piezas, desmarcado (false) para los enemigos
 
     private Game controller;
     private cells tableroCells;
 
     private int xBoard = -1;
     private int yBoard = -1;
-    private string player = "white";
 
-    public void Activate(int startX, int startY, string playerColor)
+    public void Activate(int startX, int startY, bool esDelJugador = true)
     {
         controller = FindFirstObjectByType<Game>();
         tableroCells = FindFirstObjectByType<cells>();
+        moveplate = FindFirstObjectByType<MovePlate>();
 
-        player = playerColor;
+        esJugador = esDelJugador;
         SetCoords(startX, startY);
     }
 
@@ -32,11 +35,11 @@ public class Chessman : MonoBehaviour
 
     public int GetXBoard() { return xBoard; }
     public int GetYBoard() { return yBoard; }
-    public string GetPlayer() { return player; }
 
     private void OnMouseUp()
     {
-        if (controller != null && !controller.IsGameOver() && player == "white" && controller.GetCurrentPlayer() == "white")
+        // Mucho más limpio: solo comprueba si es tu pieza y si es tu turno
+        if (controller != null && !controller.IsGameOver() && esJugador && controller.GetCurrentPlayer() == "white")
         {
             DestroyMovePlates();
             InitiateMovePlates();
@@ -61,11 +64,9 @@ public class Chessman : MonoBehaviour
                 int targetX = xBoard + (mov.direccio.x * paso);
                 int targetY = yBoard + (mov.direccio.y * paso);
 
-                // Ajustado a tu nombre PosOnBoard de Game.cs
                 if (!controller.PosOnBoard(targetX, targetY))
                     break;
 
-                // Ajustado a tu nombre GetPos de Game.cs
                 GameObject piezaEnCasilla = controller.GetPos(targetX, targetY);
 
                 if (piezaEnCasilla == null)
@@ -84,9 +85,9 @@ public class Chessman : MonoBehaviour
     {
         Vector3 pos = tableroCells.ObtenirCentreCasella(matrixX, matrixY);
 
-        GameObject mp = Instantiate(movePlate, pos, Quaternion.identity);
+        // Como moveplate ya es de tipo MovePlate, Instantiate nos devuelve el script directamente
+        MovePlate mpScript = Instantiate(moveplate, pos, Quaternion.identity);
 
-        MovePlate mpScript = mp.GetComponent<MovePlate>();
         mpScript.SetReference(gameObject);
         mpScript.SetCoords(matrixX, matrixY);
     }

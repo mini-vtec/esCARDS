@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6197672053204667244}
   - component: {fileID: 2488036615583237168}
   - component: {fileID: 7399089763674948962}
-  - component: {fileID: -8874086879606641090}
+  - component: {fileID: -182494763939366919}
   m_Layer: 0
   m_Name: white_bishop
   m_TagString: Untagged
@@ -114,7 +114,7 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &-8874086879606641090
+--- !u!114 &-182494763939366919
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -123,6 +123,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 4367471375365803181}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c83b18809dfad884faf753dd2d02c58d, type: 3}
+  m_Script: {fileID: 11500000, guid: 07484a65f138ffc428cb4cd09ac5d4e8, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Script_pesa
+  m_EditorClassIdentifier: Assembly-CSharp::Chessman
+  datosPesa: {fileID: 11400000, guid: 615a77b64aff0f246ba16ff748e5a60b, type: 2}
+  movePlate: {fileID: 0}

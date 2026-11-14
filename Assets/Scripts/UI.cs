@@ -50,8 +50,7 @@ public class UI : MonoBehaviour
             GameObject nuevaPesa = Instantiate(pesa_t, centreExacte, Quaternion.identity);
 
             Chessman cm = nuevaPesa.GetComponent<Chessman>();
-            // Le pasamos las coordenadas y el color directamente a Activate:
-            cm.Activate(randX, randY, "white");
+            cm.Activate(randX, randY);
             game.SetPos(nuevaPesa, randX, randY);
         }
 
