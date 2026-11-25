@@ -709,6 +709,10 @@ MonoBehaviour:
   - {fileID: 1730610762647797475, guid: 9da8435e389057f46905a0142f49bd4b, type: 3}
   - {fileID: 4208823790094573446, guid: b5f607e2225412743aeb7b02c13bfd45, type: 3}
   - {fileID: 5174740329307936760, guid: af87239477c4ee649a73c7386eea56a2, type: 3}
+  obstaclePrefab: {fileID: 0}
+  numObstacles: 6
+  libreX: 0
+  libreY: 0
 --- !u!114 &463050646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1597,7 +1601,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 0.45490196, g: 0.60784316, b: 0.56078434, a: 0.5176471}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
