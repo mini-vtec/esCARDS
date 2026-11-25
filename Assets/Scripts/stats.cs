@@ -6,6 +6,7 @@ public struct Moviment
 {
     public Vector2Int direccio;
     public int distanciaMaxima;
+    public bool soloAtaque;
 }
 
 [CreateAssetMenu(fileName = "stats", menuName = "Scriptable Escacs/stats")]

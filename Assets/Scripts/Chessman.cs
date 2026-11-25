@@ -6,6 +6,9 @@ public class Chessman : MonoBehaviour
     public stats datosPesa;
     public bool esJugador = true;
 
+    // Vida de ESTA ficha. datosPesa.vida es solo la vida maxima.
+    public int vidaActual;
+
     private Game controller;
     private cells tableroCells;
 
@@ -18,6 +21,7 @@ public class Chessman : MonoBehaviour
         tableroCells = FindFirstObjectByType<cells>();
 
         esJugador = esDelJugador;
+        vidaActual = datosPesa.vida;
         SetCoords(startX, startY);
     }
 
@@ -31,6 +35,18 @@ public class Chessman : MonoBehaviour
 
     public int GetXBoard() { return xBoard; }
     public int GetYBoard() { return yBoard; }
+
+    public void RecibirDano(int cantidad)
+    {
+        vidaActual = vidaActual - cantidad;
+
+        if (vidaActual <= 0)
+        {
+            controller.SetPosEmpty(xBoard, yBoard);
+            DestroyMovePlates();
+            Destroy(gameObject);
+        }
+    }
 
     private void OnMouseUp()
     {
@@ -52,26 +68,33 @@ public class Chessman : MonoBehaviour
 
     public void InitiateMovePlates()
     {
+        // Las fichas enemigas van hacia el otro lado, asi que se invierte la Y
+        int signo = 1;
+        if (esJugador == false)
+        {
+            signo = -1;
+        }
+
         foreach (Moviment mov in datosPesa.movimentsPermesos)
         {
+            // Los movimientos solo de ataque se usaran mas adelante, con el combate
+            if (mov.soloAtaque == true)
+            {
+                continue;
+            }
+
             for (int paso = 1; paso <= mov.distanciaMaxima; paso++)
             {
                 int targetX = xBoard + (mov.direccio.x * paso);
-                int targetY = yBoard + (mov.direccio.y * paso);
+                int targetY = yBoard + (mov.direccio.y * signo * paso);
 
-                if (!controller.PosOnBoard(targetX, targetY))
-                    break;
-
-                GameObject piezaEnCasilla = controller.GetPos(targetX, targetY);
-
-                if (piezaEnCasilla == null)
-                {
-                    MovePlateSpawn(targetX, targetY);
-                }
-                else
+                // Si la casilla no esta libre (fuera del tablero, obstaculo o pieza), se corta
+                if (controller.IsFree(targetX, targetY) == false)
                 {
                     break;
                 }
+
+                MovePlateSpawn(targetX, targetY);
             }
         }
     }

@@ -26,6 +26,11 @@ public class UI : MonoBehaviour
 
     void ComprobarYAsignarCarta(GameObject pesa, Image imagenCarta)
     {
+        if (pesa == null)
+        {
+            return;
+        }
+
         Chessman cm = pesa.GetComponent<Chessman>();
         if (cm != null && cm.datosPesa != null && cm.datosPesa.iconoCarta != null)
         {
@@ -41,18 +46,28 @@ public class UI : MonoBehaviour
         if (carta_t == 2) pesa_t = game.pesa_2;
         if (carta_t == 3) pesa_t = game.pesa_3;
 
-        if (pesa_t != null)
+        if (pesa_t == null)
         {
-            int randX = Random.Range(0, 8);
-            int randY = Random.Range(0, 2);
-
-            Vector3 centreExacte = cells.ObtenirCentreCasella(randX, randY);
-            GameObject nuevaPesa = Instantiate(pesa_t, centreExacte, Quaternion.identity);
-
-            Chessman cm = nuevaPesa.GetComponent<Chessman>();
-            cm.Activate(randX, randY);
-            game.SetPos(nuevaPesa, randX, randY);
+            return;
         }
+
+        // Busca una casilla libre en las filas 0 y 1
+        bool hayCasilla = game.BuscarCasillaLibre(1);
+        if (hayCasilla == false)
+        {
+            Debug.Log("No hay casillas libres");
+            return;
+        }
+
+        int x = game.libreX;
+        int y = game.libreY;
+
+        Vector3 centreExacte = cells.ObtenirCentreCasella(x, y);
+        GameObject nuevaPesa = Instantiate(pesa_t, centreExacte, Quaternion.identity);
+
+        Chessman cm = nuevaPesa.GetComponent<Chessman>();
+        cm.Activate(x, y);
+        game.SetPos(nuevaPesa, x, y);
 
         ui.SetActive(false);
     }
